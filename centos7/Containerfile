@@ -1,0 +1,20 @@
+FROM centos:centos7
+
+# install some necessary dependencies
+RUN yum -y install redhat-lsb && \
+    yum -y groupinstall 'Development Tools' && \
+    yum -y install java-1.8.0-openjdk ant ant-junit ruby git \
+                   maven cpan wget perl-IPC-Cmd rpm-build createrepo \
+                   perl-Data-Dumper gcc-c++ rsync
+
+WORKDIR /home/git/zm-build
+
+# volume to retrieve builds
+VOLUME /home/git/zm-build/BUILDS
+
+# copy build script
+COPY build.sh /home/git/zm-build/
+RUN chmod +x /home/git/zm-build/build.sh
+
+# build zimbra
+ENTRYPOINT ["./build.sh"]

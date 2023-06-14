@@ -1,0 +1,25 @@
+FROM ubuntu:20.04
+
+# install and pre-configure timezone 
+ENV TZ=America/Puerto_Rico
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone && \
+    apt update && \
+    apt-get -y install tzdata
+
+# install some necessary dependencies
+RUN apt-get -y install git lsb-release && \
+    apt-get -y install software-properties-common openjdk-8-jdk \
+    ant ant-optional ant-contrib ruby git maven build-essential debhelper wget rsync
+
+WORKDIR /home/git/zm-build
+
+# volume to retrieve builds
+VOLUME /home/git/BUILDS
+
+# copy build script
+COPY build.sh /home/git/zm-build/
+RUN chmod +x /home/git/zm-build/build.sh
+
+# build zimbra
+ENTRYPOINT ["./build.sh"]
