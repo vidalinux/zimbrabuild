@@ -3,7 +3,7 @@ podman run --rm --name "zimbrabuild_alma8" \
 -v ./ssh:/root/.ssh \
 -e BUILD_NO="0001" \
 -e BUILD_RELEASE="DAFFODIL" \
--e BUILD_RELEASE_NO="10.0.0" \
+-e BUILD_RELEASE_NO="10.0.6" \
 -e BUILD_OS="RHEL8_64" \
 -e BUILD_ARCH="amd64" \
 -e BUILD_TYPE="FOSS" \

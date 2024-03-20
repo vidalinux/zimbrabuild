@@ -19,6 +19,7 @@ RUN chmod +x /home/git/zm-build/build.sh
 
 # copy patch almalinux8
 COPY zimbra-alma.patch /home/git/zm-build/
+COPY zimbra-rocky.patch /home/git/zm-build/
 
 # build zimbra
 ENTRYPOINT ["./build.sh"]

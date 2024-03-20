@@ -9,6 +9,7 @@ git checkout origin/develop
 
 # patch to support almalinux
 patch rpmconf/Build/get_plat_tag.sh zimbra-alma.patch
+patch rpmconf/Build/get_plat_tag.sh zimbra-rocky.patch
 
 cat > /home/git/zm-build/config.build << EOF
 BUILD_TS=$(date +%Y%m%d%H%M%S)
