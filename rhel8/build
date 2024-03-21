@@ -1,0 +1,3 @@
+#!/bin/bash
+
+podman build -t docker.io/ovox/zimbrabuild-rhel8:latest .

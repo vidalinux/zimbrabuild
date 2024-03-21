@@ -1,4 +1,4 @@
-podman run --rm --name "zimbrabuild_centos7" \
+podman run --rm --name "zimbrabuild_rhel7" \
 -v ./volume:/home/git/BUILDS \
 -v ./ssh:/root/.ssh \
 -e BUILD_NO="0001" \
@@ -11,4 +11,4 @@ podman run --rm --name "zimbrabuild_centos7" \
 -e BUILD_RELEASE_CANDIDATE="GA" \
 -e BUILD_THIRDPARTY_SERVER="files.zimbra.com" \
 -e INTERACTIVE="0" \
-docker.io/ovox/zimbrabuild-centos7:latest
+docker.io/ovox/zimbrabuild-rhel7:latest

@@ -11,4 +11,4 @@ podman run --rm --name "zimbrabuild_almalinux8" \
 -e BUILD_RELEASE_CANDIDATE="GA" \
 -e BUILD_THIRDPARTY_SERVER="files.zimbra.com" \
 -e INTERACTIVE="0" \
-docker.io/ovox/zimbrabuild-almalinux8:latest
+docker.io/ovox/zimbrabuild-rhel8:latest

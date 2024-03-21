@@ -1,4 +1,4 @@
-podman run --rm --name "zimbrabuild_alma8" \
+podman run --rm --name "zimbrabuild_rhel8" \
 -v ./volume:/home/git/BUILDS \
 -v ./ssh:/root/.ssh \
 -e BUILD_NO="0001" \
@@ -11,4 +11,4 @@ podman run --rm --name "zimbrabuild_alma8" \
 -e BUILD_RELEASE_CANDIDATE="GA" \
 -e BUILD_THIRDPARTY_SERVER="files.zimbra.com" \
 -e INTERACTIVE="0" \
-docker.io/ovox/zimbrabuild-alma8:latest
+docker.io/ovox/zimbrabuild-rhel8:latest
